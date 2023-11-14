@@ -1,0 +1,30 @@
+# Virtualenv
+/.venv
+/venv
+
+# Sensitive
+/.env
+
+# IDE Related
+/.idea
+/.vscode
+
+# Temporary Files
+__pycache__
+
+# Mypy
+/.mypy_cache
+
+# Pytest
+**/**/.pytest_cache
+
+# Development
+/openapi.json
+/experiment.py
+
+# Translations
+*.mo
+*.pot
+
+# Poetry
+/requirements.txt

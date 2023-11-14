@@ -1,0 +1,31 @@
+version: "3.6"
+
+services:
+  backend:
+    platform: linux/amd64
+    build:
+      context: ../backend
+      dockerfile: ../deployment/backend.Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../backend/.env.local
+    networks:
+      - network-bridge
+
+  frontend:
+    platform: linux/amd64
+    build:
+      context: ../frontend
+      dockerfile: ../deployment/frontend.Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    env_file:
+      - ../frontend/.env.local
+    networks:
+      - network-bridge
+
+networks:
+  network-bridge:

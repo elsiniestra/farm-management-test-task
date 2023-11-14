@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.7"
+django-environ = "^0.11.2"
+whitenoise = "^6.6.0"
+djangorestframework = "^3.14.0"
+django-cors-headers = "^4.3.0"
+gunicorn = "^21.2.0"
+uvicorn = "^0.24.0.post1"
+
+[tool.poetry.dev-dependencies]
+tox = "^4.11.3"
+flake8 = "^6.1.0"
+black = "^23.11.0"
+isort = "^5.12.0"
+pycln = "^2.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.pycln]
+expand-stars = true
+
+[tool.isort]
+line_length = 80
+atomic = true
+include_trailing_comma = true
+use_parentheses = true
+multi_line_output = 3
+skip_glob = "**/__init__.py"
